@@ -16,15 +16,7 @@ Vagrant.configure("2") do |config|
     server2.vm.hostname = "server-2"
     server2.vm.provision :docker
     server2.vm.provision :docker_compose
-    server2.vm.provision :file, source: "docker-compose.yaml", destination: "docker-compose.yaml"
-    server2.vm.provision :file, source: ".env", destination: ".env"
-    server2.vm.provision :file, source: "Dockerfile", destination: "Dockerfile"
-    server2.vm.provision :file, source: ".dockerignore", destination: ".dockerignore"
-    server2.vm.provision :file, source: "index.ts", destination: "index.ts"
-    server2.vm.provision :file, source: "src", destination: "src"
-    server2.vm.provision :file, source: "package.json", destination: "package.json"
-    server2.vm.provision :file, source: "package-lock.json", destination: "package-lock.json"
-    server2.vm.provision :file, source: "tsconfig.json", destination: "tsconfig.json"
-    server2.vm.provision "shell", inline: "docker compose up -d"
+    server2.vm.provision :file, source: "AT20_CONVERT_SERVICE_TS", destination: "AT20_CONVERT_SERVICE_TS"
+    server2.vm.provision "shell", inline: "docker compose -f /home/vagrant/AT20_CONVERT_SERVICE_TS/docker-compose.yaml up -d"
   end
 end
