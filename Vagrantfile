@@ -1,4 +1,10 @@
 
+$script = <<-SCRIPT
+echo "I like Vagrant"
+echo "I love Linux"
+date > ~/vagrant_provisioned_at
+SCRIPT
+
 Vagrant.configure("2") do |config|
 
   config.vm.box_download_insecure=true
