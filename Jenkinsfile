@@ -6,6 +6,7 @@ pipeline {
                 sh 'echo Hello World'
                 sh 'echo Hello class'
             }
+        }
         stage ('Tests') {
             steps {
                 sh 'echo Here is the testing command'
@@ -21,4 +22,3 @@ pipeline {
         
         }
     }
-}
