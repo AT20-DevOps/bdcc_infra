@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
     ciServer.vm.provision :docker
     ciServer.vm.provision :docker_compose
     ciServer.vm.provision :file, source:"../docker/docker-compose.ci.yml", destination:"docker-compose.yml"
-    ciServer.vm.provision :docker_compose, yml:"/home/vagrant/docker-compose.yml", run: "always"
+    #ciServer.vm.provision :docker_compose, yml:"/home/vagrant/docker-compose.yml", run: "always"
   end
 
 
