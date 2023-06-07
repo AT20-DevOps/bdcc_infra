@@ -12,7 +12,7 @@ services:
       - go_server:/home/go
 
   gocd_agent_ubuntu:
-    image: bdcc10/gocd-agent-ubuntu-20.04-bdcc:latest
+    image: bdcc10/gocd-agent-ubuntu-bdcc:latest
     container_name: gocd_agent_ubuntu
     restart: always
     depends_on:
