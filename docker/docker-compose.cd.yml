@@ -12,7 +12,7 @@ services:
       - go_server:/home/go
 
   gocd_agent_ubuntu:
-    image: gocd/gocd-agent-ubuntu-20.04:v22.2.0
+    image: bdcc10/gocd-agent-ubuntu-20.04-bdcc:latest
     container_name: gocd_agent_ubuntu
     restart: always
     depends_on:
@@ -52,19 +52,7 @@ services:
       - AGENT_AUTO_REGISTER_HOSTNAME=gocd_agent_python
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  gocd_agent_Unode:
-    image: bdcc10/node:18-alpine3.16-bdcc
-    container_name: gocd_agent_alpine
-    restart: always
-    depends_on:
-      - gocd_server
-    environment:
-      - GO_SERVER_URL=http://gocd_server:8153/go
-      #- AGENT_AUTO_REGISTER_KEY=
-      - AGENT_AUTO_REGISTER_RESOURCES=Unode
-      - AGENT_AUTO_REGISTER_HOSTNAME=gocd_agent_Unode
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+
 volumes:
   godata_server:
     name: godata_server
